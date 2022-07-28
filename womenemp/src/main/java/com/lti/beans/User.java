@@ -7,7 +7,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "PG_USER")
 public class User {
-    //commit(namita)
+    
 	@Id
 	private String username;
 	private String name;
