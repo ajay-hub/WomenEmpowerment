@@ -1,9 +1,12 @@
 package com.lti.dao;
 
+import java.util.List;
+
 import com.lti.beans.User;
 
 public interface UserDao {
 
-	void addUser(User user);
-
+	boolean addUser(User user);
+	public List<User> fetchAll();
+	public User fetchUser(String username);
 }
