@@ -22,6 +22,7 @@ public class UserController {
 
 	@Autowired
 	UserService userService;
+	
 
 	@RequestMapping(path = "/add", method = RequestMethod.POST)
 	public String add(@RequestBody User user) {
