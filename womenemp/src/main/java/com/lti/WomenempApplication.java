@@ -4,7 +4,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class WomenempApplication {
-	
+
 	//AjayGit - token  : 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
 	
 	public static void main(String[] args) {

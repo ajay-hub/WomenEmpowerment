@@ -8,31 +8,30 @@ import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-
-import com.lti.beans.User;
+import com.lti.beans.Ngo;
 
 @Repository
-public class UserDaoImpl implements UserDao{
+public class NgoDaoImpl implements NgoDao {
 
 	@PersistenceContext
 	EntityManager entityManager;
 
 	@Transactional
-	public boolean addUser(User user) {
+	public boolean addNGO(Ngo user) {
 		entityManager.persist(user);
 		return true;
 	}
 	
 	@SuppressWarnings("unchecked")
 	@Transactional
-	public List<User> fetchAll() {
-		Query q = entityManager.createQuery("select obj from User as obj");
+	public List<Ngo> fetchAll() {
+		Query q = entityManager.createQuery("select obj from NGO as obj");
 		return q.getResultList();
 	}
 
 	@Override
-	public User fetchUser(String username) {
+	public Ngo fetchNGO(String username) {
 		// TODO Auto-generated method stub
-		return entityManager.find(User.class,username);
+		return entityManager.find(Ngo.class,username);
 	}
 }
