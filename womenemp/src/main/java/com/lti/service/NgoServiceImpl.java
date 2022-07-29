@@ -16,7 +16,7 @@ public class NgoServiceImpl implements NgoService {
 
 	public boolean add(Ngo ngo) {
 		System.out.println("NGO service add");
-		NGODao.addNGO(ngo);
+		NGODao.addNgo(ngo);
 		return true;
 	}
 
@@ -29,7 +29,7 @@ public class NgoServiceImpl implements NgoService {
 	@Override
 	public Ngo fetchNgo(String NGOname) {
 		// TODO Auto-generated method stub
-		return NGODao.fetchNGO(NGOname);
+		return NGODao.fetchNgo(NGOname);
 	}
 
 }
