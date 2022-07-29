@@ -34,29 +34,5 @@ public class AdminServiceImpl implements AdminService {
 		// TODO Auto-generated method stub
 		return adminDao.fetchUser(userNameAdmin);
 	}
-
-	@Override
-	public void add(Admin admin) {
-		// TODO Auto-generated method stub
-		
-	}
-
-//	@Override
-//	public boolean addAdmin(Admin admin) {
-//		// TODO Auto-generated method stub
-//		return false;
-//	}
-//
-//	@Override
-//	public List<Admin> fetchEach() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public Admin fetchUser(String userNameAdmin) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-
+	
 }

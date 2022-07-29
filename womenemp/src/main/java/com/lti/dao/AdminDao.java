@@ -9,7 +9,6 @@ public interface AdminDao {
 	
 	boolean addAdmin(Admin admin);
 	public List<Admin> fetchAll();
-	public User fetchAdmin(String userNameAdmin);
 	Admin fetchUser(String userNameAdmin);
 
 }
