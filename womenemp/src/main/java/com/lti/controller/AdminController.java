@@ -13,7 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.lti.beans.Admin;
 import com.lti.service.AdminService;
 
-
+//{
+//    "name":"Ajay CHoudhari",
+//    "userNameAdmin":"Ajay",
+//    "birthDate":"15Feb",
+//    "password":"FyWorld69",
+//    "mobileNumber":987654326
+//}
 @CrossOrigin
 @RestController
 @RequestMapping("/admin-api")
