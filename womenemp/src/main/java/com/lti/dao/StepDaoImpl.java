@@ -7,9 +7,11 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
-import com.lti.beans.Ngo;
+import org.springframework.stereotype.Repository;
+
 import com.lti.beans.Step;
 
+@Repository
 public class StepDaoImpl implements StepDao {
 
 	@PersistenceContext
@@ -25,30 +27,15 @@ public class StepDaoImpl implements StepDao {
 	
 	@Override
 	@Transactional
-	public boolean addStep(Ngo ) {
+	public boolean addStep(Step step) {
 		// TODO Auto-generated method stub
-		entityManager.persist(user);
+		entityManager.persist(step);
 		return true;
 	}
-	
-	
-	
-	
-//	public boolean addStep(Step step) {
-//		// TODO Auto-generated method stub
-//		return false;
-//	}
-//
-//	@Override
-//	public List<Step> fetchAll() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public Step fetchStep(int ngoId) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
 
+	@Override
+	public Step fetchStep(int stepRegId) {
+		// TODO Auto-generated method stub
+		return entityManager.find(Step.class,stepRegId);
+	}
 }

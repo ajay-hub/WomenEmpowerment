@@ -8,37 +8,38 @@ import javax.persistence.Table;
 @Table(name = "PG_Admin_Table")
 public class Admin {
 	
-	
-	private String name;
-	
 	@Id
 	private String userNameAdmin;
-	
+		
+	private String name;
+
 	private String birthDate;
 	private String password;
 	private Double mobileNumber;
-	public Admin(String name, String userNameAdmin, String birthDate, String password, Double mobileNumber) {
+	
+	public Admin(String userNameAdmin, String name, String birthDate, String password, Double mobileNumber) {
 		super();
-		this.name = name;
 		this.userNameAdmin = userNameAdmin;
+		this.name = name;
 		this.birthDate = birthDate;
 		this.password = password;
 		this.mobileNumber = mobileNumber;
 	}
 	public Admin() {
 		super();
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
+		// TODO Auto-generated constructor stub
 	}
 	public String getUserNameAdmin() {
 		return userNameAdmin;
 	}
 	public void setUserNameAdmin(String userNameAdmin) {
 		this.userNameAdmin = userNameAdmin;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getBirthDate() {
 		return birthDate;
@@ -60,11 +61,9 @@ public class Admin {
 	}
 	@Override
 	public String toString() {
-		return "Admin [name=" + name + ", userNameAdmin=" + userNameAdmin + ", birthDate=" + birthDate + ", password="
+		return "Admin [userNameAdmin=" + userNameAdmin + ", name=" + name + ", birthDate=" + birthDate + ", password="
 				+ password + ", mobileNumber=" + mobileNumber + "]";
 	}
 	
 	
-	
-
 }

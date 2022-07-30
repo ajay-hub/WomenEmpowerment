@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.lti.beans.Ngo;
 import com.lti.beans.Step;
 import com.lti.service.StepService;
 
@@ -34,9 +33,9 @@ public class StepController {
 		return list;
 	}
 	
-	@RequestMapping(path = "/step/{username}", method = RequestMethod.GET)
-	public Step fetch(@PathVariable("username") String username) {
-		return stepService.fetchStep(username);
+	@RequestMapping(path = "/step/{stepRegId}", method = RequestMethod.GET)
+	public Step fetch(@PathVariable("stepRegId") int stepRegId) {
+		return stepService.fetchStep(stepRegId);
 	}
 	
 

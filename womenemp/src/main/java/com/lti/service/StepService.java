@@ -2,14 +2,14 @@ package com.lti.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.lti.beans.Step;
 
 public interface StepService {
 
-	void add(Step step);
-
-	List<Step> fetchEach();
-
-	Step fetchStep(String username);
+	public boolean add(Step step);
+	public List<Step> fetchEach();
+	public Step fetchStep(int stepRegId);
 
 }
