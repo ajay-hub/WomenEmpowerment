@@ -50,10 +50,10 @@ public class AdminController {
 	}
 	
 	
-	@PostMapping("/updateStatus/{ngoId}")
-	public boolean updateemp1(@PathVariable("ngoId") int ngoId )
+	@PostMapping("/updateStatus/{regId}")
+	public boolean updateStatus(@PathVariable("regId") int regId )
 	{	
-		return adminService.updateStatus(ngoId);
+		return adminService.updateStatus(regId);
 	}
 
 	

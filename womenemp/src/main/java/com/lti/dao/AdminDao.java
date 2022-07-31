@@ -10,7 +10,7 @@ public interface AdminDao {
 	boolean addAdmin(Admin admin);
 	public List<Admin> fetchAll();
 	Admin fetchUser(String userNameAdmin);
-	boolean updateStatus(int ngoId);
+	boolean updateStatus(int regId);
 	
 
 }

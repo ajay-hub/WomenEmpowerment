@@ -36,14 +36,16 @@ public class AdminDaoImpl implements AdminDao{
 	}
 
 	@Override
+	@Transactional
 	public Admin fetchUser(String userNameAdmin) {
 		// TODO Auto-generated method stub
 		return entityManager.find(Admin.class,userNameAdmin);
 	}
 
 	@Override
-	public boolean updateStatus(int ngoId) {
-		Step s = entityManager.find(Step.class, ngoId);
+	@Transactional
+	public boolean updateStatus(int regId) {
+		Step s = entityManager.find(Step.class, regId);
 		if (s != null) {
 			s.setStatus(true);
 			entityManager.merge(s);

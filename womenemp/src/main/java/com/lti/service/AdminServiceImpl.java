@@ -36,9 +36,9 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public boolean updateStatus(int ngoId ) {
+	public boolean updateStatus(int regId ) {
 		// TODO Auto-generated method stub
-		return adminDao.updateStatus(ngoId);
+		return adminDao.updateStatus(regId);
 	}
 
 

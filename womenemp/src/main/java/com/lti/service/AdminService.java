@@ -11,7 +11,7 @@ public interface AdminService {
 	public boolean addAdmin(Admin admin);
 	public List<Admin> fetchEach();
 	public Admin fetchUser(String userNameAdmin);
-	public boolean updateStatus(int ngoId);
+	public boolean updateStatus(int regId);
 
 
 }
