@@ -11,6 +11,7 @@ public interface AdminDao {
 	public List<Admin> fetchAll();
 	Admin fetchUser(String userNameAdmin);
 	boolean updateStatus(int regId);
+	boolean deleteUser(int regId);
 	
 
 }

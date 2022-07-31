@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,7 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.lti.beans.Admin;
 import com.lti.beans.Step;
+import com.lti.beans.User;
 import com.lti.service.AdminService;
+import com.lti.service.UserService;
 
 //{
 //    "name":"Ajay CHoudhari",
@@ -56,5 +59,10 @@ public class AdminController {
 		return adminService.updateStatus(regId);
 	}
 
+	@DeleteMapping(value = "/deleteUser/{regId}")
+	public boolean deleteUser(@PathVariable("regId")int regId)  
+	{	
+		return adminService.deleteUser(regId);
 	
+	}
 }

@@ -10,7 +10,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.lti.beans.Admin;
-
 import com.lti.beans.Ngo;
 import com.lti.beans.Step;
 import com.lti.beans.User;
@@ -53,6 +52,20 @@ public class AdminDaoImpl implements AdminDao{
 		}
 		return false;
 	}
+
+	@Override
+	public boolean deleteUser(int regId) {
+		Step s = entityManager.find(Step.class, regId);
+		if (s != null) {
+			entityManager.remove(s);
+			return true ;
+		}
+		return false;
+	}
+
+
+	
+	
 
 
 }
