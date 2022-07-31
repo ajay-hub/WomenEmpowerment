@@ -8,7 +8,6 @@ public class WomenempApplication {
 	//AjayGit - token  : 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
 	
 	public static void main(String[] args) {
-		System.out.println("Hello");
 		SpringApplication.run(WomenempApplication.class, args);
 	}
 }

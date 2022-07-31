@@ -10,7 +10,9 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.lti.beans.Admin;
+
 import com.lti.beans.Ngo;
+import com.lti.beans.Step;
 import com.lti.beans.User;
 
 @Repository
@@ -37,6 +39,17 @@ public class AdminDaoImpl implements AdminDao{
 	public Admin fetchUser(String userNameAdmin) {
 		// TODO Auto-generated method stub
 		return entityManager.find(Admin.class,userNameAdmin);
+	}
+
+	@Override
+	public boolean updateStatus(int ngoId) {
+		Step s = entityManager.find(Step.class, ngoId);
+		if (s != null) {
+			s.setStatus(true);
+			entityManager.merge(s);
+			return true;
+		}
+		return false;
 	}
 
 

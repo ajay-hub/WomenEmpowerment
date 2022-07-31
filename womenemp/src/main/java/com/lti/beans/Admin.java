@@ -10,9 +10,7 @@ public class Admin {
 	
 	@Id
 	private String userNameAdmin;
-		
 	private String name;
-
 	private String birthDate;
 	private String password;
 	private Double mobileNumber;

@@ -34,5 +34,13 @@ public class AdminServiceImpl implements AdminService {
 		// TODO Auto-generated method stub
 		return adminDao.fetchUser(userNameAdmin);
 	}
+
+	@Override
+	public boolean updateStatus(int ngoId ) {
+		// TODO Auto-generated method stub
+		return adminDao.updateStatus(ngoId);
+	}
+
+
 	
 }
