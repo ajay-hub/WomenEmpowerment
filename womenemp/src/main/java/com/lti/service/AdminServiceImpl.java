@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.lti.beans.Admin;
-import com.lti.beans.User;
 import com.lti.dao.AdminDao;
 
 
@@ -47,8 +46,15 @@ public class AdminServiceImpl implements AdminService {
 		return adminDao.deleteUser(regId);
 	}
 
-	
+	@Override
+	public boolean deleteCourse(int courseId) {
+		// TODO Auto-generated method stub
+		return adminDao.deleteCourse(courseId);
+	}
 
-
-	
+	@Override
+	public boolean updateCourseStatus(int courseId ) {
+		// TODO Auto-generated method stub
+		return adminDao.updateCourseStatus(courseId);
+	}
 }

@@ -1,5 +1,6 @@
 package com.lti.beans;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,19 +24,21 @@ public class NgoCourse {
 	private String courseName;
 	private String courseDetails;
 	private String courseDuration;
+	private boolean status;
 	
 	@ManyToOne
 	@JoinColumn(name="NGO_User_Name")
 	Ngo ngo;
 
 	public NgoCourse(int courseId, String courseTrainingSector, String courseName, String courseDetails,
-			String courseDuration, Ngo ngo) {
+			String courseDuration, boolean status, Ngo ngo) {
 		super();
 		this.courseId = courseId;
 		this.courseTrainingSector = courseTrainingSector;
 		this.courseName = courseName;
 		this.courseDetails = courseDetails;
 		this.courseDuration = courseDuration;
+		this.status = status;
 		this.ngo = ngo;
 	}
 
@@ -84,6 +87,14 @@ public class NgoCourse {
 		this.courseDuration = courseDuration;
 	}
 
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+
 	public Ngo getNgo() {
 		return ngo;
 	}
@@ -95,9 +106,8 @@ public class NgoCourse {
 	@Override
 	public String toString() {
 		return "NgoCourse [courseId=" + courseId + ", courseTrainingSector=" + courseTrainingSector + ", courseName="
-				+ courseName + ", courseDetails=" + courseDetails + ", courseDuration=" + courseDuration + ", ngo="
-				+ ngo + "]";
+				+ courseName + ", courseDetails=" + courseDetails + ", courseDuration=" + courseDuration + ", status="
+				+ status + ", ngo=" + ngo + "]";
 	}
-	
-	
+		
 }

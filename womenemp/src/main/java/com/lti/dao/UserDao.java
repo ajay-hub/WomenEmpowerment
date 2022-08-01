@@ -9,4 +9,5 @@ public interface UserDao {
 	boolean addUser(User user);
 	public List<User> fetchAll();
 	public User fetchUser(String username);
+	public User findByUserId(String username);
 }

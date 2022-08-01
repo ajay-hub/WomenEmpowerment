@@ -12,6 +12,8 @@ public interface AdminDao {
 	Admin fetchUser(String userNameAdmin);
 	boolean updateStatus(int regId);
 	boolean deleteUser(int regId);
+	boolean deleteCourse(int courseId);
+	boolean updateCourseStatus(int courseId);
 	
 
 }
