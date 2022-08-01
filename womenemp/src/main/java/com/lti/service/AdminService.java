@@ -14,6 +14,8 @@ public interface AdminService {
 	public Admin fetchUser(String userNameAdmin);
 	public boolean updateStatus(int regId);
 	public boolean deleteUser(int regId);
+	boolean deleteCourse(int courseId);
+	boolean updateCourseStatus(int courseId);
 	
 
 

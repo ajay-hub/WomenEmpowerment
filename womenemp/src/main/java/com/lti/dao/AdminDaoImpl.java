@@ -10,9 +10,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.lti.beans.Admin;
-import com.lti.beans.Ngo;
+import com.lti.beans.NgoCourse;
 import com.lti.beans.Step;
-import com.lti.beans.User;
 
 @Repository
 public class AdminDaoImpl implements AdminDao{
@@ -54,17 +53,36 @@ public class AdminDaoImpl implements AdminDao{
 	}
 
 	@Override
+	@Transactional
 	public boolean deleteUser(int regId) {
 		Step s = entityManager.find(Step.class, regId);
+		if (s != null) {
+			entityManager.remove(s);
+			return true;
+		}
+		return false;
+	}
+	
+	@Override
+	@Transactional
+	public boolean updateCourseStatus(int courseId) {
+		NgoCourse s = entityManager.find(NgoCourse.class, courseId);
+		if (s != null) {
+			s.setStatus(true);
+			entityManager.merge(s);
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	@Transactional
+	public boolean deleteCourse(int courseId) {
+		NgoCourse s = entityManager.find(NgoCourse.class, courseId);
 		if (s != null) {
 			entityManager.remove(s);
 			return true ;
 		}
 		return false;
 	}
-
-
-//forcommit
-
-
 }
