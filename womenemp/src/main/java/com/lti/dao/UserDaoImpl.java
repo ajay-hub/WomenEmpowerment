@@ -35,4 +35,11 @@ public class UserDaoImpl implements UserDao{
 		// TODO Auto-generated method stub
 		return entityManager.find(User.class,username);
 	}
+
+	@Override
+	public User findByUserId(String username) {
+		// TODO Auto-generated method stub
+		
+		return entityManager.find(User.class,username);
+	}
 }
