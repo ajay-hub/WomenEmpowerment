@@ -14,6 +14,7 @@ public interface AdminDao {
 	boolean deleteUser(int regId);
 	boolean deleteCourse(int courseId);
 	boolean updateCourseStatus(int courseId);
+	Admin findByUserId(String username);
 	
 
 }

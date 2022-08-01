@@ -3,6 +3,7 @@ package com.lti.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lti.beans.Admin;
+import com.lti.beans.User;
 import com.lti.service.AdminService;
 
 //{
@@ -32,6 +34,14 @@ public class AdminController {
 	@Autowired
 	AdminService adminService;
 	
+	@PostMapping("/login")
+	public ResponseEntity<?> loginUser(@RequestBody Admin adminData){
+		System.out.println(adminData);
+		Admin admin = adminService.findByUserId(adminData.getUserNameAdmin());
+		if(admin.getPassword().equals(adminData.getPassword()))
+			return ResponseEntity.ok(admin);
+		return (ResponseEntity<?>) ResponseEntity.internalServerError();
+	}
 
 	@RequestMapping(path = "/add", method = RequestMethod.POST)
 	public String add(@RequestBody Admin admin) {

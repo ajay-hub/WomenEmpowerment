@@ -85,4 +85,10 @@ public class AdminDaoImpl implements AdminDao{
 		}
 		return false;
 	}
+
+	@Override
+	public Admin findByUserId(String username) {
+		// TODO Auto-generated method stub
+		return entityManager.find(Admin.class, username);
+	}
 }

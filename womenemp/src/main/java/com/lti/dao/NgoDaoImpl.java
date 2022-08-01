@@ -9,6 +9,7 @@ import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import com.lti.beans.Ngo;
+import com.lti.beans.User;
 
 @Repository
 public class NgoDaoImpl implements NgoDao {
@@ -33,6 +34,12 @@ public class NgoDaoImpl implements NgoDao {
 
 	@Override
 	public Ngo fetchNgo(String username) {
+		// TODO Auto-generated method stub
+		return entityManager.find(Ngo.class,username);
+	}
+
+	@Override
+	public Ngo findByUserId(String username) {
 		// TODO Auto-generated method stub
 		return entityManager.find(Ngo.class,username);
 	}
