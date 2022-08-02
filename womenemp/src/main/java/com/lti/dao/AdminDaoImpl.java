@@ -52,6 +52,7 @@ public class AdminDaoImpl implements AdminDao{
 		return false;
 	}
 
+	
 	@Override
 	@Transactional
 	public boolean deleteUser(int regId) {
@@ -75,6 +76,14 @@ public class AdminDaoImpl implements AdminDao{
 		return false;
 	}
 
+	//FOR TEST PURPOSE ONLY 
+	@Override
+	@Transactional
+	public NgoCourse fetchUserById(int courseId) {
+		NgoCourse s = entityManager.find(NgoCourse.class, courseId);
+		return s;
+	}
+	
 	@Override
 	@Transactional
 	public boolean deleteCourse(int courseId) {

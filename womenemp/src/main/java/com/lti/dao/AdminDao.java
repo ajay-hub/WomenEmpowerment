@@ -3,6 +3,8 @@ package com.lti.dao;
 import java.util.List;
 
 import com.lti.beans.Admin;
+import com.lti.beans.NgoCourse;
+import com.lti.beans.Step;
 import com.lti.beans.User;
 
 public interface AdminDao {
@@ -15,6 +17,7 @@ public interface AdminDao {
 	boolean deleteCourse(int courseId);
 	boolean updateCourseStatus(int courseId);
 	Admin findByUserId(String username);
+	NgoCourse fetchUserById(int regId);
 	
 
 }
