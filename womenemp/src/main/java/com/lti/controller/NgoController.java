@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lti.beans.Ngo;
+import com.lti.beans.NgoCourse;
 import com.lti.beans.User;
 import com.lti.service.NgoService;
 import com.lti.service.UserService;
@@ -49,5 +50,11 @@ public class NgoController {
 	@RequestMapping(path = "/user/{username}", method = RequestMethod.GET)
 	public Ngo fetch(@PathVariable("username") String username) {
 		return ngoService.fetchNgo(username);
+	}
+	
+	@RequestMapping(path = "/fetchByStatus", method = RequestMethod.GET)
+	public List<NgoCourse> fetchAllByStatus() {
+		List<NgoCourse> list = ngoService.fetchAllByStatus();
+		return list;
 	}
 }

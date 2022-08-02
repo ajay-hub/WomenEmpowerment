@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.lti.beans.Ngo;
+import com.lti.beans.NgoCourse;
 import com.lti.beans.User;
 import com.lti.dao.NgoDao;
 
@@ -37,6 +38,12 @@ public class NgoServiceImpl implements NgoService {
 	public Ngo findByUserId(String username) {
 		// TODO Auto-generated method stub
 		return NGODao.findByUserId(username);
+	}
+
+	@Override
+	public List<NgoCourse> fetchAllByStatus() {
+		// TODO Auto-generated method stub
+		return NGODao.fetchAllByStatus();
 	}
 
 }

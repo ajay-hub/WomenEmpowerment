@@ -9,7 +9,7 @@ import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import com.lti.beans.Ngo;
-import com.lti.beans.User;
+import com.lti.beans.NgoCourse;
 
 @Repository
 public class NgoDaoImpl implements NgoDao {
@@ -42,5 +42,15 @@ public class NgoDaoImpl implements NgoDao {
 	public Ngo findByUserId(String username) {
 		// TODO Auto-generated method stub
 		return entityManager.find(Ngo.class,username);
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	@Transactional
+	public List<NgoCourse> fetchAllByStatus() {
+		// TODO Auto-generated method stub
+		Query q = entityManager.createQuery("select obj from NgoCourse as obj where obj.status=:true");
+		q.setParameter("true", true);
+		return q.getResultList();
 	}
 }
