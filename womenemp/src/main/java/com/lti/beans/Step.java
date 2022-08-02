@@ -33,7 +33,7 @@ public class Step{
 	@Column(name="STEP_Ngo_Id")
 	private int ngoId;
 	
-	@Column(name="Status")
+	@Column(name="Status", columnDefinition="BOOLEAN DEFAULT false")
 	private boolean status;
 	
 	@OneToOne
@@ -141,7 +141,6 @@ public class Step{
 				+ ", birthCertificate=" + birthCertificate + ", trainingSector=" + trainingSector + ", ngoId=" + ngoId
 				+ ", status=" + status + ", user=" + user + ", ngoCourse=" + ngoCourse + "]";
 	}
-
 	
 
 }

@@ -1,5 +1,7 @@
 package com.lti.beans;
 
+import javax.persistence.Column;
+
 public class StepDTO {
 	
 	private int regId;
@@ -8,6 +10,7 @@ public class StepDTO {
 	private String birthCertificate;
 	private String trainingSector;
 	private int ngoId;
+	@Column(columnDefinition="BOOLEAN DEFAULT false")
 	private boolean status;
 	private String username;
 	private int courseId;

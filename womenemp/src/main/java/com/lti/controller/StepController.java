@@ -17,7 +17,7 @@ import com.lti.beans.StepDTO;
 import com.lti.beans.User;
 import com.lti.service.StepService;
 
-@CrossOrigin
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/step-api")
 public class StepController {
@@ -60,7 +60,7 @@ public class StepController {
 		step.setNgoId(s.getNgoId());
 		step.setNoOfChild(s.getNoOfChild());
 		step.setRegId(s.getRegId());
-		step.setStatus(s.isStatus());
+		step.setStatus(false);
 		step.setTrainingSector(s.getTrainingSector());
 		
 		step.setUser(user);
