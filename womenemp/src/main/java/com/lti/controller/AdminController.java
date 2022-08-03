@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lti.beans.Admin;
-import com.lti.beans.User;
 import com.lti.service.AdminService;
 
 //{
@@ -85,5 +84,11 @@ public class AdminController {
 	public boolean updateCourseStatus(@PathVariable("courseId")int courseId )
 	{	
 		return adminService.updateCourseStatus(courseId);
+	}
+	
+	@GetMapping("/updateStepStatus/{regId}")
+	public boolean updateStepStatus(@PathVariable("regId")int regId )
+	{	
+		return adminService.updateStepStatus(regId);
 	}
 }

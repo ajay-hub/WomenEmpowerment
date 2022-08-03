@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.lti.beans.Admin;
-import com.lti.beans.Ngo;
 import com.lti.dao.AdminDao;
 
 
@@ -64,4 +63,12 @@ public class AdminServiceImpl implements AdminService {
 		// TODO Auto-generated method stub
 		return adminDao.findByUserId(username);
 	}
+
+	@Override
+	public boolean updateStepStatus(int regId) {
+		// TODO Auto-generated method stub
+		return adminDao.updateStepStatus(regId);
+	}
+
+
 }

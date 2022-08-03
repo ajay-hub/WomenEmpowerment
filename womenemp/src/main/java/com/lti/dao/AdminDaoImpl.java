@@ -100,4 +100,17 @@ public class AdminDaoImpl implements AdminDao{
 		// TODO Auto-generated method stub
 		return entityManager.find(Admin.class, username);
 	}
+
+	@Override
+	@Transactional
+	public boolean updateStepStatus(int regId) {
+		// TODO Auto-generated method stub
+		Step s = entityManager.find(Step.class, regId);
+		if (s != null) {
+			s.setStatus(true);
+			entityManager.merge(s);
+			return true;
+		}
+		return false;
+	}
 }

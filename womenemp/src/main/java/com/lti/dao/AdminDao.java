@@ -18,6 +18,7 @@ public interface AdminDao {
 	boolean updateCourseStatus(int courseId);
 	Admin findByUserId(String username);
 	NgoCourse fetchUserById(int regId);
+	boolean updateStepStatus(int regId);
 	
 
 }

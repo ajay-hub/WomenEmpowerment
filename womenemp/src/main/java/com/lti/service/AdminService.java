@@ -3,10 +3,6 @@ package com.lti.service;
 import java.util.List;
 
 import com.lti.beans.Admin;
-import com.lti.beans.Ngo;
-import com.lti.beans.User;
-
-
 
 public interface AdminService {
 	
@@ -18,6 +14,7 @@ public interface AdminService {
 	boolean deleteCourse(int courseId);
 	boolean updateCourseStatus(int courseId);
 	public Admin findByUserId(String username);
+	public boolean updateStepStatus(int regId);
 
 
 }
